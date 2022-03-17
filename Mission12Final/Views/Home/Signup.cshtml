@@ -5,9 +5,16 @@
 @model List<AppointmentResponse>
 
 <div class="date">
-    <a asp-controller="Home" asp-action="PreviousDate" asp-route-curDate="@ViewBag.CurDate">Previous</a>
-    <h3>@ViewBag.CurDate</h3>
-    <a asp-controller="Home" asp-action="NextDate" asp-route-curDate="@ViewBag.CurDate">Next</a>
+    @if (ViewBag.Disable)
+    {
+        <a class="btn btn-secondary" disabled>Previous</a>
+    }
+    else
+    {
+        <a class="btn btn-warning" asp-controller="Home" asp-action="PreviousDate" asp-route-curDate="@ViewBag.CurDate">Previous</a>
+    }
+    <button class="btn btn-dark">@ViewBag.CurDate</button>
+    <a class="btn btn-danger" asp-controller="Home" asp-action="NextDate" asp-route-curDate="@ViewBag.CurDate">Next</a>
 </div>
 
 <h2>Select a Time</h2>

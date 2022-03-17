@@ -38,6 +38,15 @@ namespace Mission12Final.Controllers
 
             ViewBag.CurDate = curdate;
 
+            string[] formats = { "MM/dd/yyyy" };
+            DateTime current = DateTime.ParseExact(curdate, formats, new CultureInfo("en-US"), DateTimeStyles.None);
+            ViewBag.Disable = false;
+
+            if (current.AddDays(-1) < DateTime.Today)
+            {
+                ViewBag.Disable = true;
+            }
+
             var record = appointment.Appointments.Where(x => x.Date == curdate).ToList();
 
             List<string> times = new List<string>();
