@@ -201,7 +201,7 @@ namespace Mission12Final.Controllers
             ViewBag.CurDate = HttpContext.Session.GetString("date");
             ViewBag.AppTime = ar.Time;
             ar.Date = HttpContext.Session.GetString("date");
-            return View(ar);
+            return View("Form", ar);
         }
     }
 }
