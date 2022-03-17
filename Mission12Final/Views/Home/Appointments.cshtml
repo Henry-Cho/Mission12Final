@@ -1,0 +1,57 @@
+﻿@{
+    ViewData["Title"] = "View Appointments";
+}
+
+@model List<AppointmentResponse>
+
+<h1>View Appointments</h1>
+
+<table class="table table-sm table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Appointment ID</th>
+            <th>Name of Group</th>
+            <th>Size of Group</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Date</th>
+            <th>Time</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        @if (Model?.Count() != 0)
+        {
+            // List the projects
+            @foreach (var b in Model)
+            {
+        <tr>
+            <td>@b.AppointmentId</td>
+            <td>@b.GroupName</td>
+            <td>@b.GroupSize</td>
+            <td>@b.Email</td>
+            <td>@b.Phone</td>
+            <td>@b.Date</td>
+            <td>@b.Time</td>
+
+            <td>
+                <a class="btn btn-warning btn-sm" asp-controller="Home" asp-action="Edit" asp-route-appId="@b.AppointmentId">Edit</a>
+            </td>
+
+            <td>
+                <a class="btn btn-danger btn-sm" asp-controller="Home" asp-action="Delete" asp-route-appId="@b.AppointmentId">Delete</a>
+            </td>
+        </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="5" class="text-center">No Book</td>
+            </tr>
+        }
+
+    </tbody>
+
+</table>
