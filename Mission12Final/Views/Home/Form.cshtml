@@ -23,12 +23,8 @@
     <input asp-for="Phone" class="form-control" />
     <br />
 
-    <label asp-for="Date">Date(MM/dd/yyyy): </label>
-    <input asp-for="Date" class="form-control" disabled value="@ViewBag.CurDate" />
-    <br />
-
-    <label asp-for="Time">Time: </label>
-    <input asp-for="Time" class="form-control" disabled value="@ViewBag.AppTime">
+    <input type="hidden" asp-for="Date" class="form-control" disabled value="@ViewBag.CurDate" />
+    <input type="hidden" asp-for="Time" class="form-control" disabled value="@ViewBag.AppTime">
 
     <button class="btn btn-primary" type="submit">Submit</button>
     <div asp-validation-summary="All;"></div>

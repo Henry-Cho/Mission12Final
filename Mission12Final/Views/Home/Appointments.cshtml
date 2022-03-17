@@ -9,12 +9,11 @@
 <table class="table table-sm table-striped table-bordered">
     <thead>
         <tr>
-            <th>Appointment ID</th>
+            <th>Date</th>
             <th>Name of Group</th>
             <th>Size of Group</th>
             <th>Email</th>
             <th>Phone</th>
-            <th>Date</th>
             <th>Time</th>
         </tr>
     </thead>
@@ -27,13 +26,19 @@
             @foreach (var b in Model)
             {
         <tr>
-            <td>@b.AppointmentId</td>
+            <td>@b.Date</td>
             <td>@b.GroupName</td>
             <td>@b.GroupSize</td>
             <td>@b.Email</td>
             <td>@b.Phone</td>
-            <td>@b.Date</td>
-            <td>@b.Time</td>
+            @if (Int32.Parse(b.Time) < 13)
+            {
+                <td>@b.Time A.M.</td>
+            }
+            else
+            {
+                <td>@((Int32.Parse(b.Time)- 12).ToString()) P.M.</td>
+            }
 
             <td>
                 <a class="btn btn-warning btn-sm" asp-controller="Home" asp-action="Edit" asp-route-appId="@b.AppointmentId">Edit</a>
