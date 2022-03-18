@@ -33,7 +33,14 @@
             <td>@b.Phone</td>
             @if (Int32.Parse(b.Time) < 13)
             {
-                <td>@b.Time A.M.</td>
+                if (Int32.Parse(b.Time) == 12)
+                {
+                    <td>@b.Time P.M.</td>
+                }
+                else
+                {
+                    <td>@b.Time A.M.</td>
+                }
             }
             else
             {
