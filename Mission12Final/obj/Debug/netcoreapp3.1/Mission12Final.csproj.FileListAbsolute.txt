@@ -80,3 +80,4 @@
 /Users/hyungseokcho/Projects/Mission12Final/Mission12Final/obj/Debug/netcoreapp3.1/Razor/Views/Home/Form.cshtml.g.cs
 /Users/hyungseokcho/Projects/Mission12Final/Mission12Final/obj/Debug/netcoreapp3.1/Razor/Views/Home/Signup.cshtml.g.cs
 /Users/hyungseokcho/Projects/Mission12Final/Mission12Final/bin/Debug/netcoreapp3.1/mono_crash.11a67480d0.0.json
+/Users/hyungseokcho/Projects/Mission12Final/Mission12Final/bin/Debug/netcoreapp3.1/Appointment.sqlite

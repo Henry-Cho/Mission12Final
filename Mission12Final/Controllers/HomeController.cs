@@ -40,7 +40,7 @@ namespace Mission12Final.Controllers
 
             // formatting date
             string[] formats = { "MM/dd/yyyy" };
-            DateTime current = DateTime.ParseExact(curdate, formats, new CultureInfo("en-US"), DateTimeStyles.None);
+            DateTime current = DateTime.ParseExact(curdate, formats, System.Globalization.CultureInfo.InvariantCulture);
 
             // initial value of Disable in ViewBag
             ViewBag.Disable = false;
@@ -78,7 +78,7 @@ namespace Mission12Final.Controllers
 
             // formatting date and get a previous date of curDate
             string[] formats = { "MM/dd/yyyy" };
-            DateTime curdate = DateTime.ParseExact(curDate, formats, new CultureInfo("en-US"), DateTimeStyles.None);
+            DateTime curdate = DateTime.ParseExact(curDate, formats, System.Globalization.CultureInfo.InvariantCulture);
             DateTime previousDate = curdate.AddDays(-1);
             string s_previous = previousDate.ToString("MM/dd/yyyy");
 
@@ -96,7 +96,7 @@ namespace Mission12Final.Controllers
             HttpContext.Session.Remove("time");
             // formatting date and get a next date of curDate
             string[] formats = { "MM/dd/yyyy" };
-            DateTime curdate = DateTime.ParseExact(curDate, formats, new CultureInfo("en-US"), DateTimeStyles.None);
+            DateTime curdate = DateTime.ParseExact(curDate, formats, System.Globalization.CultureInfo.InvariantCulture);
             DateTime nextDate = curdate.AddDays(1);
             string s_next = nextDate.ToString("MM/dd/yyyy");
 
